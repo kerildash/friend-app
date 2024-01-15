@@ -1,0 +1,17 @@
+﻿@model List<MVC.Models.Friend>;
+
+@{
+}
+<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+
+<div class="friends-container">
+	@foreach (var friend in Model)
+	{
+		<div class="friend-div">
+			<p class="friend-name, friend-p">@friend.Name</p>
+			<p class="friend-place, friend-p">@friend.Place</p>
+			
+		</div>
+	}
+
+</div>
