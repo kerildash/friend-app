@@ -17,4 +17,10 @@ public class FriendController : Controller
 		List<MVC.Models.Friend> friends = Repository.GetAll();
 		return View(model: friends, viewName: "Index");
 	}
+	[HttpGet]
+	public IActionResult Add()
+	{
+		return View(viewName: "Add");
+	}
+
 }
