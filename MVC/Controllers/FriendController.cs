@@ -22,6 +22,12 @@ public class FriendController : Controller
 	{
 		return View(viewName: "Add");
 	}
-	
+	[HttpPost]
+	public IActionResult Add(string name, string place)
+	{
+		var friend = new Friend(name, place);
+		Repository.Add(friend);
+		return Index();
+	}
 
 }
