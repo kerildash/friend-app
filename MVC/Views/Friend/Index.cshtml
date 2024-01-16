@@ -5,14 +5,16 @@
 <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 
 <div class="friends-container">
+	<h1>Мои друзья</h1>
+
 	@foreach (var friend in Model)
 	{
-		<div class="friend-div">
-			<p class="friend-name, friend-p">@friend.Name</p>
-			<p class="friend-place, friend-p">@friend.Place</p>
+		<div class="border friend-div">
+			<p class="friend-name friend-p">@friend.Name</p>
+			<p class="friend-place friend-p">@friend.Place</p>
 			
 		</div>
 	}
-	<input class="btn add-friend" type="button" value="Добавить друга" onclick="location.href='@Url.Action("Add", "Friend")'"/>
+	<input class="btn border add-friend" type="button" value="Добавить друга" onclick="location.href='@Url.Action("Add", "Friend")'" />
 
 </div>
