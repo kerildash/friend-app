@@ -8,10 +8,10 @@ html {
     }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+/*.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
     box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
-
+*/
 html {
     position: relative;
     min-height: 100%;
@@ -25,19 +25,38 @@ body {
     margin-bottom: 60px;
 }
 
+h1 {
+    margin-bottom: 12px;
+    font-size: 2.3rem;
+}
+.header-in-flex {
+    margin-bottom: 0px;
+}
 .friends-container {
     width: 60%;
+    min-width: 310px;
     margin: auto;
 }
 
+.border {
+    border-style :solid !important;
+    border-width :1px !important;
+}
 .friend-div {
     border-radius: 15px;
+    border-color: #989898 !important;
     width: auto;
     margin-bottom: 10px;
     padding: 15px 30px;
-    background-color: #e0e0e0;
+    background-color: #f7f7f7;
+}
+.friend-name{
+    font-weight:500;
 }
 
+.friend-place {
+    font-size: 14px;
+}
 .friend-p {
     margin: 0;
     padding: 0;
@@ -46,23 +65,41 @@ body {
 p {
 }
 
-button {
+.btn {
     border: none;
     margin: 0;
     padding: 3px;
+    font-weight: 500;
 }
 
-    button:focus {
+    .btn:focus {
         outline: none !important;
         box-shadow: none !important;
     }
 
+.in-header-btn {
+    border: none;
+    margin: 0;
+    background-color: inherit;
+    border-radius: 7px;
+    padding:7px 11px 0px 11px;
+}
+
+    .in-header-btn:hover {
+        background-color: #efefef;
+    }
+    .in-header-btn:focus {
+        background-color: #efefef;
+    }
+
 .add-friend {
     border-radius: 15px;
+    border-color: #1856dd !important;
     padding: 15px 30px;
     width: 100%;
     background-color: #daecff;
-    outline: none;
+    color: #1856dd !important;
+    
 }
 
     .add-friend:hover {
@@ -74,3 +111,44 @@ button {
         outline: none !important;
         box-shadow: none !important;
     }
+
+.input-text {
+    border-radius: 7px;
+    border-color: #989898 !important;
+    width: 250px;
+    padding-left: 10px;
+}
+
+
+
+
+
+.fields-to-fill {
+    display: flex;
+    flex-wrap:wrap;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.header-flex-container {
+    display: flex;
+    align-content: baseline;
+    justify-content: space-between;
+    margin-bottom:7px;
+}
+.header-icon {
+    font-size: 2rem;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.icons {
+    display: flex;
+    align-content: flex-start;
+    gap: 5px;
+}
