@@ -7,14 +7,14 @@ namespace MVC.Controllers;
 public class FriendController : Controller
 {
 	public FriendRepository Repository;
-	public FriendController()
+	public FriendController(FriendRepository repository)
 	{
-		Repository = new FriendRepository();
+		Repository = repository;
 	}
 	[HttpGet]
 	public IActionResult Index()
 	{
-		List<MVC.Models.Friend> friends = Repository.GetAll();
+		List<Friend> friends = Repository.GetAll();
 		return View(model: friends, viewName: "Index");
 	}
 	[HttpGet]
@@ -22,5 +22,6 @@ public class FriendController : Controller
 	{
 		return View(viewName: "Add");
 	}
+	
 
 }
