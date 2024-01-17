@@ -1,0 +1,24 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model MVC.Models.Friend;
+
+<div class="friends-container">
+	<h1>Удалить друга?</h1>
+	<div >
+		<div class="border friend-div">
+			<p class="friend-name friend-p">@Model.Name</p>
+			<p class="friend-place friend-p">@Model.Place</p>
+		</div>
+		<form style="margin-bottom:10px" method="post" asp-controller="Friend" asp-action="Delete">
+			<input hidden type="text" asp-for="Name" />
+			<input hidden type="text" asp-for="Place" />
+			<input hidden type="text" asp-for="Id" />
+			<input class="btn border btn-yes" type="submit" value="Да" />
+
+		</form>
+		<a  class="btn border btn-no" asp-controller="Friend" asp-action="Index">Нет</a>
+	</div>
+</div>
