@@ -26,8 +26,35 @@ public class FriendController : Controller
 	public IActionResult Add(string name, string place)
 	{
 		var friend = new Friend(name, place);
-		Repository.Add(friend);
+		Repository.Add(friend);	
 		return Index();
 	}
-
+	[HttpGet]
+	public IActionResult Edit(Guid id)
+	{
+		var friend = Repository.Get(id);
+		return View(friend);
+	}
+	[HttpPost]
+	public IActionResult Edit(Friend friend)
+	{
+		if (!ModelState.IsValid)
+		{
+			return View(friend);
+		}
+		Repository.Edit(friend);
+		return RedirectToAction("Index");
+	}
+	[HttpGet]
+	public IActionResult Delete(Guid id)
+	{
+		var friend = Repository.Get(id);
+		return View(friend);
+	}
+	[HttpPost]
+	public IActionResult Delete(Friend friend)
+	{
+		Repository.Delete(friend.Id);
+		return RedirectToAction("");
+	}
 }
