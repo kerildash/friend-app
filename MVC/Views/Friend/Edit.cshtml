@@ -1,0 +1,40 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model MVC.Models.Friend;
+@{
+}
+<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-straight/css/uicons-bold-straight.css'>
+
+<div class="friends-container">
+	<div class="header-flex-container">
+		<h1 class="header-in-flex">Редактировать</h1>
+		<button title="Cancel add friend" class="in-header-btn" onclick="location.href='@Url.Action("Index", "Friend")'">
+			<i class="header-icon fi fi-bs-cross"></i>
+		</button>
+	</div>
+
+	<form method="post" asp-controller="Friend" asp-action="Edit" class="friend-div border" >
+		<input type="text" asp-for="Id" readonly hidden />
+		<div class="flex-container">
+			<div class="flex-item fields-to-fill">
+				<div>
+					<p class="label">Имя</p>
+					
+					<p class="textbox"><input type="text" asp-for="Name" class="border input-text" /></p>
+					<span class="label" asp-validation-for="Name"></span>
+				</div>
+				<div>
+					<p class="label">Город</p>
+					<p class="textbox"><input type="text" asp-for="Place" class="border input-text" /></p>
+					<span class="label" asp-validation-for="Place"></span>
+				</div>
+			</div>
+			<div class="flex-item icons"></div>
+		</div>
+
+
+
+		<p style="margin: 15px 0 0 0"><input class="btn border add-friend" type="submit" value="Изменить информацию о друге" /></p>
+	</form>
+</div>
