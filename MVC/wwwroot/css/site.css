@@ -47,7 +47,7 @@ h1 {
     border-color: #989898 !important;
     width: auto;
     margin-bottom: 10px;
-    padding: 15px 30px;
+    padding: 15px 30px 20px 30px;
     background-color: #f7f7f7;
 }
 .friend-name{
@@ -62,7 +62,9 @@ h1 {
     padding: 0;
 }
 
-p {
+.label {
+    margin-bottom: 5px !important;
+    margin-top: 0px;
 }
 
 .btn {
@@ -99,7 +101,6 @@ p {
     width: 100%;
     background-color: #daecff;
     color: #1856dd !important;
-    
 }
 
     .add-friend:hover {
@@ -108,6 +109,43 @@ p {
 
     .add-friend:focus {
         background-color: #bddeff;
+        outline: none !important;
+        box-shadow: none !important;
+    }
+
+.btn-yes {
+    border-radius: 15px;
+    border-color: #008b07 !important;
+    padding: 15px 30px;
+    width: 100%;
+    background-color: #c9ffc4;
+    color: #008b07 !important;
+}
+
+    .btn-yes:hover {
+        background-color: #98ff90;
+    }
+
+    .btn-yes:focus {
+        background-color: #98ff90;
+        outline: none !important;
+        box-shadow: none !important;
+    }
+.btn-no {
+    border-radius: 15px;
+    border-color: #d70000 !important;
+    padding: 15px 30px;
+    width: 100%;
+    background-color: #ffdddd;
+    color: #d70000 !important;
+}
+
+    .btn-no:hover {
+        background-color: #ffaaaa;
+    }
+
+    .btn-no:focus {
+        background-color: #ffaaaa;
         outline: none !important;
         box-shadow: none !important;
     }
@@ -146,9 +184,57 @@ p {
     justify-content: space-between;
     align-items: flex-start;
 }
-
-.icons {
+.flex-row-container {
     display: flex;
-    align-content: flex-start;
-    gap: 5px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 2%;
+}
+.flex-row-item {
+    flex: 0 0 49%;
+    width: auto;
+    min-width: 250px
+}
+.icons {
+    margin-top: 3px;
+    display: flex;
+    align-content:baseline;
+    
+}
+
+.friend-icon-btn {
+    color: #525252;
+    font-style:normal;
+    text-decoration: none;
+    border: none;
+    margin: 0;
+    background-color: inherit;
+    border-radius: 7px;
+    padding: 7px;
+}
+
+    .friend-icon-btn:hover {
+        background-color: #efefef;
+        color: #656565;
+    }
+
+    .friend-icon-btn:focus {
+        background-color: #efefef;
+        color: #656565;
+    }
+
+.friend-delete-container{
+    display: flex;
+    gap: 15px;
+    align-content: stretch;
+
+}
+
+.textbox{
+    margin: 0px;
+}
+.p {
+    margin: 0px;
 }
