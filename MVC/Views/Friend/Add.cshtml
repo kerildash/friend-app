@@ -4,6 +4,7 @@
 @{
 	ViewBag.Title = "Add Friend";
 }
+@model MVC.Models.Friend;
 <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-straight/css/uicons-bold-straight.css'>
 
 <div class="friends-container">
@@ -18,12 +19,15 @@
 		<div class="flex-container">
 			<div class="flex-item fields-to-fill">
 				<div>
-					<p>Имя</p>
-					<p><input type="text" name="name" class="border input-text" /></p>
+					<p class="label">Имя</p>
+
+					<p class="textbox"><input type="text" asp-for="Name" class="border input-text" /></p>
+					<span class="label" asp-validation-for="Name"></span>
 				</div>
 				<div>
-					<p>Город</p>
-					<p><input type="text" name="place" class="border input-text" /></p>
+					<p class="label">Город</p>
+					<p class="textbox"><input type="text" asp-for="Place" class="border input-text" /></p>
+					<span class="label" asp-validation-for="Place"></span>
 				</div>
 			</div>
 			<div class="flex-item icons"></div>
@@ -31,6 +35,6 @@
 
 		
 
-		<p style="margin-bottom: 3px;"><input class="btn border add-friend" type="submit" value="Добавить друга"  /></p>
+		<p style="margin: 15px 0 0 0"><input class="btn border add-friend" type="submit" value="Добавить друга" /></p>
 	</form>
 </div>

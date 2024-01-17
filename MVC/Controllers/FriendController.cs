@@ -23,11 +23,15 @@ public class FriendController : Controller
 		return View(viewName: "Add");
 	}
 	[HttpPost]
-	public IActionResult Add(string name, string place)
+	
+	public IActionResult Add([Bind(include: ["Id", "Name", "Place"])] Friend friend)
 	{
-		var friend = new Friend(name, place);
+		if (!ModelState.IsValid)
+		{
+			return View(friend);
+		}
 		Repository.Add(friend);	
-		return Index();
+		return RedirectToAction("Index");
 	}
 	[HttpGet]
 	public IActionResult Edit(Guid id)
