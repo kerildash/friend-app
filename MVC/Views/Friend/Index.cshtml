@@ -3,18 +3,32 @@
 @{
 }
 <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-
+<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 <div class="friends-container">
 	<h1>Мои друзья</h1>
-
+	<div class="flex-row-container">
 	@foreach (var friend in Model)
 	{
-		<div class="border friend-div">
-			<p class="friend-name friend-p">@friend.Name</p>
-			<p class="friend-place friend-p">@friend.Place</p>
-			
+		<div  class="border friend-div flex-container flex-row-item">
+			<div>
+
+				<p class="friend-name friend-p">@friend.Name</p>
+				<p class="friend-place friend-p">@friend.Place</p>
+			</div>
+			<div class="icons">
+				<div>
+					<a class="friend-icon-btn" asp-controller="Friend" asp-action="Edit" asp-route-id="@friend.Id">
+						<i class="fi fi-rr-pencil"></i>
+					</a>
+				</div>
+				<div>
+					<a class="friend-icon-btn" asp-controller="Friend" asp-action="Delete" asp-route-id="@friend.Id">
+						<i class="fi fi-rr-trash"></i>
+					</a>
+				</div>
+			</div>
 		</div>
 	}
-	<input class="btn border add-friend" type="button" value="Добавить друга" onclick="location.href='@Url.Action("Add", "Friend")'" />
-
+		<input style="align-self: flex-start" class="btn border add-friend flex-row-item" type="button" value="Добавить друга" onclick="location.href='@Url.Action("Add", "Friend")'" />
+	</div>
 </div>
