@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MVC.Models;
 
-namespace MVC.Models;
+namespace MVC.Services;
 
-public class FriendRepository
+public class FriendRepository : IFriendRepository
 {
 	public List<Friend> Friends { get; set; }
 	public FriendRepository()
@@ -21,12 +22,12 @@ public class FriendRepository
 	{
 		return Friends;
 	}
-    public Friend Get(Guid id)
-    {
+	public Friend Get(Guid id)
+	{
 		var friend = Friends.Find(x => x.Id == id);
 		return friend is not null ? friend : throw new NullReferenceException();
-    }
-    public void Add(Friend friend)
+	}
+	public void Add(Friend friend)
 	{
 		Friends.Add(friend);
 	}
@@ -41,7 +42,7 @@ public class FriendRepository
 		Friends[index] = friend;
 	}
 	public void Delete(Guid id)
-	{		
+	{
 		Friends.Remove(Get(id));
 	}
 }

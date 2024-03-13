@@ -1,13 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MVC.Models;
+using MVC.Services;
 
 
 namespace MVC.Controllers;
 
 public class FriendController : Controller
 {
-	public FriendRepository Repository;
-	public FriendController(FriendRepository repository)
+	public IFriendRepository Repository;
+	public FriendController(IFriendRepository repository)
 	{
 		Repository = repository;
 	}
@@ -23,7 +24,6 @@ public class FriendController : Controller
 		return View(viewName: "Add");
 	}
 	[HttpPost]
-	
 	public IActionResult Add([Bind(include: ["Id", "Name", "Place"])] Friend friend)
 	{
 		if (!ModelState.IsValid)
