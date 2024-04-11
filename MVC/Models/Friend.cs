@@ -8,10 +8,9 @@ public class Friend
 	[Required(ErrorMessage = "Отсутствует ID")]
 	public Guid Id { get; set; }
 
-	[Required(ErrorMessage = "Введите имя")]
+	[Required(ErrorMessage = "Введите имя: поле не может быть пустым")]
 	public string Name { get; set; }
 
-	[Required(ErrorMessage = "Введите город")]
 	[StringLength(25, ErrorMessage = "Допустимо не более 25 символов")]
 	public string Place { get; set; }
 
