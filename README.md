@@ -1,5 +1,5 @@
 ### How to set up and run the app
-1. Paste connection string into the `appsettings.json` file
+1. Paste the connection string into the `appsettings.json` file
 2. In the Package Manager Console, run:
    ```
    PM> Add-Migration Initial -OutputDir "Database/Migrations"
